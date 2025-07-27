@@ -24,7 +24,7 @@ class GenericOpenAIAPIClient(LLMClient):
         prompt: str,
         image_path: Optional[str] = None,
         stream: bool = False,
-        model: str = "llama3.2-vision",
+        model: str = "gemma3:4b",
         temperature: float = 0.2,
         num_predict: int = 256) -> Dict[Any, Any]:
         """Generate response from OpenAI-compatible API."""

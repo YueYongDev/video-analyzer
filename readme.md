@@ -105,7 +105,7 @@ pip install -e .  # For development installation
 
 2. Pull the default vision model:
 ```bash
-ollama pull llama3.2-vision
+ollama pull gemma3:4b
 ```
 
 3. Start the Ollama service:

@@ -70,7 +70,7 @@ class LLMClient:
         prompt: str,
         image_path: Optional[str] = None,
         stream: bool = False,
-        model: str = "llama3.2-vision",
+        model: str = "gemma3:4b",
         temperature: float = 0.2,
         num_predict: int = 256) -> Dict[Any, Any]:
         pass
@@ -104,7 +104,7 @@ Key configuration groups:
         "default": "ollama",
         "ollama": {
             "url": "http://localhost:11434",
-            "model": "llama3.2-vision"
+            "model": "gemma3:4b"
         },
         "openai_api": {
             "api_key": "",

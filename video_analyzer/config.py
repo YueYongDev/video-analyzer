@@ -125,4 +125,4 @@ def get_model(config: Config) -> str:
     """Get the appropriate model based on client type and configuration."""
     client_type = config.get("clients", {}).get("default", "ollama")
     client_config = config.get("clients", {}).get(client_type, {})
-    return client_config.get("model", "llama3.2-vision")
+    return client_config.get("model", "gemma3:4b")

@@ -32,7 +32,7 @@ video-analyzer path/to/video.mp4 --client openai_api --api-key your-key --api-ur
 | `--ollama-url` | URL for the Ollama service | http://localhost:11434 | `--ollama-url http://localhost:11434` |
 | `--api-key` | API key for OpenAI-compatible service | None | `--api-key sk-xxx...` |
 | `--api-url` | API URL for OpenAI-compatible API | None | `--api-url https://openrouter.ai/api/v1` |
-| `--model` | Name of the vision model to use | llama3.2-vision | `--model gpt-4-vision-preview` |
+| `--model` | Name of the vision model to use | gemma3:4b | `--model gpt-4-vision-preview` |
 | `--duration` | Duration in seconds to process | None (full video) | `--duration 60` |
 | `--keep-frames` | Keep extracted frames after analysis | False | `--keep-frames` |
 | `--whisper-model` | Whisper model size or model path | medium | `--whisper-model large` |
@@ -66,7 +66,7 @@ The tool uses a cascading configuration system with the following priority:
     "temperature": 0.2,
     "ollama": {
       "url": "http://localhost:11434",
-      "model": "llama3.2-vision"
+      "model": "gemma3:4b"
     },
     "openai_api": {
       "api_key": "",
@@ -207,7 +207,7 @@ video-analyzer video.mp4 \
 video-analyzer video.mp4 \
     --client ollama \
     --ollama-url http://localhost:11434 \
-    --model llama3.2-vision \
+    --model gemma3:4b \
     --max-frames 30 \
     --whisper-model medium \
     --device cuda \

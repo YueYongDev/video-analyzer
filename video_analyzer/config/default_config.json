@@ -4,7 +4,7 @@
         "temperature": 0.0,
         "ollama": {
             "url": "http://localhost:11434",
-            "model": "llama3.2-vision"
+            "model": "gemma3:4b"
         },
         "openai_api": {
             "api_key": "",
