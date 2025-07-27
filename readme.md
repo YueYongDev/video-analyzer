@@ -179,6 +179,46 @@ The tool generates a JSON file (`output\analysis.json`) containing:
 - Frame-by-frame analysis
 - Final video description
 
+## API服务
+
+项目还提供基于FastAPI的REST API服务：
+
+```bash
+# 启动API服务
+video-analyzer-api
+```
+
+API服务将在 `http://localhost:8000` 上运行，提供以下端点：
+
+- `POST /upload` - 上传视频文件
+- `POST /analyze/{session_id}` - 开始分析指定会话的视频
+- `GET /status/{session_id}` - 获取分析状态
+- `GET /results/{session_id}` - 下载分析结果
+- `DELETE /session/{session_id}` - 删除会话
+- `GET /health` - 健康检查
+
+### API使用示例
+
+```bash
+# 上传视频
+curl -X POST "http://localhost:8000/upload" \
+     -H "accept: application/json" \
+     -H "Content-Type: multipart/form-data" \
+     -F "file=@video.mp4"
+
+# 开始分析（使用默认配置）
+curl -X POST "http://localhost:8000/analyze/{session_id}" \
+     -H "accept: application/json"
+
+# 获取状态
+curl -X GET "http://localhost:8000/status/{session_id}" \
+     -H "accept: application/json"
+
+# 下载结果
+curl -X GET "http://localhost:8000/results/{session_id}" \
+     -H "accept: application/json"
+```
+
 ### Sample Output
 ```
 The video begins with a person with long blonde hair, wearing a pink t-shirt and yellow shorts, standing in front of a black plastic tub or container on wheels. The ground appears to be covered in wood chips.\n\nAs the video progresses, the person remains facing away from the camera, looking down at something inside the tub. ........
