@@ -130,7 +130,9 @@ def run_video_analysis(video_path: str):
         audio_processor = AudioProcessor(
             language=None,
             model_size_or_path='medium',
-            device='auto'
+            device='auto',
+            num_workers=2,
+            cpu_threads=8
         )
 
         # 提取音频
